@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity {
         sendBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                url= "http://blog.csdn.net/";//博客链接
+                url= "http://blog.csdn.net/bob1993_dev/article/details/";//博客链接
                 url= url+blogUrlEt.getText().toString();
-                Log.i("url", url);
+                //Log.i("url", url);
                 times= Integer.parseInt(timesEt.getText().toString());
                 for (int i= 0;i< times;i++){
 
                     StringRequest request= new StringRequest(url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String s) {
-                            Log.i("result", "success");
+                           // Log.i("result", "success");
                         }
                     }, new Response.ErrorListener(){
                         @Override
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                     queue.add(request);
                 }
+
             }
         });
 
